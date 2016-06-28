@@ -16,7 +16,6 @@ function isOnSnykVulnDB(packageName, version){
 	}
 
 	function fitWithGivenVersion(range){
-		console.log(range);
 		return semver.satisfies(version, range);
 	}
 
