@@ -1,0 +1,25 @@
+{
+  "name": "@panstav/is-on-snyk-volundb",
+  "version": "0.0.0",
+  "description": "Dirty checking https://github.com/Snyk/vulndb",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/panstav/is-on-snyk-volundb.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/panstav/is-on-snyk-volundb/issues"
+  },
+  "homepage": "https://github.com/panstav/is-on-snyk-volundb#readme",
+  "dependencies": {
+    "@snyk/vulndb": "https://github.com/Snyk/vulndb/tarball/master",
+    "glob": "7.0.5",
+    "semver": "5.2.0"
+  }
+}
