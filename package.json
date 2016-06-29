@@ -1,6 +1,6 @@
 {
   "name": "@panstav/is-on-snyk-vulndb",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "Dirty checking https://github.com/Snyk/vulndb",
   "main": "index.js",
   "scripts": {
