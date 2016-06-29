@@ -24,7 +24,7 @@ function isOnSnykVulnDB(packageName, version){
 function getVulnFiles(packageName){
 	return new Promise((resolve, reject) => {
 
-		glob(`node_modules/@snyk/vulndb/data/npm/${packageName}/*/data.json`, (err, paths) => {
+		glob(`${__dirname}/node_modules/@snyk/vulndb/data/npm/${packageName}/*/data.json`, (err, paths) => {
 			if (err) return reject(err);
 			return resolve(paths);
 		});
