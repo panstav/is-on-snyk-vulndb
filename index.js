@@ -7,17 +7,16 @@ module.exports.getVulnPackagesList = getVulnPackagesList;
 function isOnSnykVulnDB(packageName, version){
 
 	return getVulnFiles(packageName).then(paths => {
-		return paths.map(toVulnarableRanges).filter(fitWithGivenVersion).length !== 0;
+
+		const vulnerabilities = paths
+			.map(require)
+			.map(data => ({ vuln: { title: data.title, severity: data.severity }, range: data.semver.vulnerable }))
+			.filter(vulnObj => semver.satisfies(version, vulnObj.range))
+			.map(data => data.vuln);
+
+		return vulnerabilities.length ? vulnerabilities : false;
+
 	});
-
-	function toVulnarableRanges(path){
-		const json = require(`./${path}`);
-		return json.semver.vulnerable;
-	}
-
-	function fitWithGivenVersion(range){
-		return semver.satisfies(version, range);
-	}
 
 }
 
